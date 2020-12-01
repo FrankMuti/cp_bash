@@ -1,0 +1,28 @@
+#!/bin/bash
+file=$1
+touch $file.kt
+NOW=$(date '+%Y.%m.%d %T')
+echo "/**
+ *  author:    stein
+ *  created    $NOW
+**/
+import java.io.File
+import kotlin.math.*
+
+@JvmField val IN = File(\"in\").inputStream()
+@JvmField val r = IN.bufferedReader()
+
+private fun readLn() = r.readLine()!! 
+private fun readInt() = readLn().toInt() 
+private fun readLong() = readLn().toLong() 
+private fun readDouble() = readLn().toDouble() 
+private fun readStrings() = readLn().split(\" \")
+private fun readInts() = readStrings().map { it.toInt() } 
+private fun readLongs() = readStrings().map { it.toLong() }
+private fun readDoubles() = readStrings().map { it.toDouble() }
+
+fun main() {
+
+}
+" > $file.kt
+echo created $file at $NOW

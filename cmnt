@@ -1,0 +1,9 @@
+#!/bin/bash
+fd=$1
+ts=$2
+mkdir $fd && cd $fd && cp -a ~/Templates/cmt/. `pwd`
+source mkf a
+if [ -z "$ts" ]
+then
+  gvim a.cc
+fi

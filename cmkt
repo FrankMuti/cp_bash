@@ -1,0 +1,4 @@
+#!/bin/bash
+fd=$1
+mkdir $fd && cd $fd && cp -a ~/Templates/ckt/. `pwd`
+source mkt a

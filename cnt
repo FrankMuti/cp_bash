@@ -1,0 +1,33 @@
+#!/bin/bash
+folder=$1
+count=$2
+work=$3
+index=(a b c d e f g h i j)
+re='^[0-9]+$'
+if [ -z "$folder" ] || [[ $folder =~ $re ]]
+then 
+  folder=random_contest$RANDOM
+  count=5
+fi
+if [[ $count -gt 10 ]]
+then 
+  count=10
+fi
+if [[ $count -lt 1 ]]
+then
+  count=5
+fi
+echo Contest: $folder
+mkdir $folder && cd $folder
+for (( c = 0; c<count; c++ )) 
+do 
+  source cmnt ${index[$c]} t
+  cd .. 
+done
+cmd="gvim -p "
+for (( c = 0; c<count; c++ )) 
+do 
+  cmd+=" ${index[$c]}/a.cc"
+done
+$cmd
+cp ~/Templates/cnt/run run

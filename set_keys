@@ -1,0 +1,4 @@
+#!/bin/bash
+xmodmap -e "keycode 51 = 0 parenright 0 parenright"
+xmodmap -e "keycode 94 = backslash bar backslash bar"
+echo Done

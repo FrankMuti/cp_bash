@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo ntpdate -u 1.ke.pool.ntp.org
